@@ -266,3 +266,7 @@ function themeChanger(){
     document.getElementById("powerSection").classList.toggle("theme-change")
     document.getElementsByClassName("operations")[0].classList.toggle("color-change");
 }
+document.getElementById("reverse").addEventListener('contextmenu', reverseLong)
+function reverseLong(){
+    document.getElementById("screen").textContent = '';
+}
