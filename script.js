@@ -264,5 +264,5 @@ function themeChanger(){
     document.getElementsByClassName("btn-number")[0].classList.toggle("border-change")
     document.getElementById("theme").classList.toggle("change-icon");
     document.getElementById("powerSection").classList.toggle("theme-change")
-    document.getElementsByClassName("operations")[0].classList.toggle("color-change")
+    document.getElementsByClassName("operations")[0].classList.toggle("color-change");
 }
