@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 92%;
+    margin: 0 auto;
+}
+
+body {
+    height: 100vh;
+}
+
+button {
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+}
+
+/* !=====================================header================ */
+header {
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(90deg, rgba(237, 33, 58, 1), rgba(147, 41, 30, 1));
+    border-image-slice: 1;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.name {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+}
+
+.theme {
+    width: 35px;
+    height: 35px;
+    background: url(./Crescent\ Moonmoon.png);
+    background-size: 35px;
+    background-repeat: no-repeat;
+}
+
+/*? =================================MAIN===================== =============*/
+.screen-all {
+    font-family: "Roboto", sans-serif;
+    text-align: right;
+}
+
+.screen-two {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 35px;
+    color: #646464;
+    margin-top: 10px;
+    height: 45px;
+    width: 100%;
+}
+
+.screen {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 56px;
+    margin-top: 5px;
+    height: 60px;
+    width: 100%;
+    
+}
+
+.functions {
+    border-top: 2px solid rgba(130, 130, 130, 1);
+    border-bottom: 2px solid rgba(130, 130, 130, 1);
+    padding: 9px 0;
+}
+
+/*27 bok niz19*/
+.functions-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.operations {
+    width: 64px;
+    height: 64px;
+    border: 2px solid rgba(130, 130, 130, 1);
+    border-radius: 100%;
+    background: transparent;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 37px;
+    margin-bottom: 19px;
+    margin-right: 25px;
+}
+
+#equals {
+    background: linear-gradient(142.46deg, #ED213A 17.09%, #700A00 83.84%);
+    box-shadow: 2px 4px 25px rgba(0, 0, 0, 0.7);
+    border: none;
+    color: white;
+    font-size: 48px;
+    margin-right: 0;
+}
+
+#plus,
+#minus,
+#division,
+#multiplication {
+    background: linear-gradient(135.2deg, #ED213A 16%, #000000 126.55%);
+    border: none;
+    color: white;
+    font-size: 40px;
+    margin-right: 0;
+}
+
+#reverse,
+#power,
+#factorial {
+    background: #C4C4C4;
+    font-size: 40px;
+    color: white;
+    border: none;
+}
+
+.powerIcon {
+    display: flex;
+    justify-content: space-around;
+
+    flex-wrap: wrap;
+}
+
+.btn-number {
+    width: 64px;
+    height: 64px;
+    border: 2px solid rgba(130, 130, 130, 1);
+    border-radius: 100%;
+    background: transparent;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 37px;
+    margin-bottom: 19px;
+    margin-right: 90px;
+}
+
+#powerNumberScreen {
+    height: 40px;
+    border-top: 2px solid rgba(130, 130, 130, 1);
+    text-align: center;
+    font-size: 35px;
+    width: 100%;
+    font-family: "Roboto",sans-serif;
+}
+#ninePower,#sixPower,#twoPower,#minusThanZeroPower,#ok{
+margin-right: 0;
+}
+.power-icon-section {
+    display: none;
+    position: fixed;
+    background: white;
+}
+
+/* =====================================footer=========================== */
+footer {
+    bottom: 0;
+    text-align: center;
+
+}
+
+.copyright {
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    font-family: "Roboto", sans-serif;
+}
