@@ -185,3 +185,16 @@ footer {
     color: black;
     font-family: "Roboto", sans-serif;
 }
+.border-change{
+    border: 2px solid white;
+}
+.theme-change{
+    color: white;
+    background: #201A1A;
+}
+.color-change{
+    color: white;
+}
+.change-icon{
+    background-image: url(./Sunsun.png);
+}
