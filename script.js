@@ -268,5 +268,5 @@ function themeChanger(){
 }
 document.getElementById("reverse").addEventListener('contextmenu', reverseLong)
 function reverseLong(){
-    document.getElementById("screen").textContent = '';
+     window.location.reload()
 }
