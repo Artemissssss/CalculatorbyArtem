@@ -256,3 +256,12 @@ function minusThanZeroFunctionPower() {
         document.getElementById("powerNumberScreen").textContent += '-'
     }
 }
+document.getElementById("theme").addEventListener("click", themeChanger);
+function themeChanger(){
+    document.querySelector("body").classList.toggle("theme-change");
+    document.getElementsByClassName("name")[0].classList.toggle("color-change")
+    document.getElementsByClassName("copyright")[0].classList.toggle("color-change")
+    document.getElementsByClassName("btn-number")[0].classList.toggle("border-change")
+    document.getElementById("theme").classList.toggle("change-icon");
+    document.getElementById("powerSection").classList.toggle("theme-change")
+}
