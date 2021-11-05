@@ -82,8 +82,15 @@ function divisionFunction() {
 document.getElementById("reverse").addEventListener("click", reverseFunction);
 
 function reverseFunction() {
+    let hj =  document.getElementById("screenTwo").textContent;
+    let yt = hj.split('');
+    yt = yt.reverse()
     document.getElementById("screen").textContent = (document.getElementById("screen").textContent).substring(0, (document.getElementById("screen").textContent).length - 1);
-}
+    if(yt[0] !== '/' && yt[0] !==  '*'&& yt[0] !==  '+'){
+        if(yt[1] !== '-' || b !== 1){
+    document.getElementById("screenTwo").textContent = (document.getElementById("screenTwo").textContent).substring(0, (document.getElementById("screenTwo").textContent).length - 1);
+    }
+}}
 document.getElementById("zero").addEventListener("click", zeroFunction);
 document.getElementById("fraction").addEventListener("click", fractionFunction);
 
@@ -99,6 +106,7 @@ function fractionFunction() {
         document.getElementById("screen").textContent += '.';
     }
 }
+
 document.getElementById("factorial").addEventListener("click", factorialFunction);
 
 function factorialFunction() {

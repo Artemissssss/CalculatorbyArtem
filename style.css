@@ -310,7 +310,15 @@ footer {
         font-size: 45px;
         margin-top: 0%;
     }
-
+    #ok{
+        background: linear-gradient(142.46deg, #ED213A 17.09%, #700A00 83.84%);
+        box-shadow: 2px 4px 25px rgba(0, 0, 0, 0.7);
+        border: none;
+        color: white;
+        width: 100px;
+        border-radius: 20px;
+       text-transform: uppercase;
+    }
 }
 
 @media(min-width:1200px) {
@@ -452,7 +460,37 @@ right: 0;
     background-color: white;
     z-index: 200;
 }
+.power-icon-section{
+    height: 333.76px;
+  width: 100%;
+}
+.powerIcon{
+    width: 1005.21px;
+}
+#ok{
+    background: linear-gradient(142.46deg, #ED213A 17.09%, #700A00 83.84%);
+    box-shadow: 2px 4px 25px rgba(0, 0, 0, 0.7);
+    border: none;
+    color: white;
+    width: 100px;
+    border-radius: 20px;
+   text-transform: uppercase;
+}
 }
 #safe-item{
     border: none;
+}
+#ok{
+    background: linear-gradient(142.46deg, #ED213A 17.09%, #700A00 83.84%);
+    box-shadow: 2px 4px 25px rgba(0, 0, 0, 0.7);
+    border: none;
+    color: white;
+    width: 100px;
+    border-radius: 20px;
+   text-transform: uppercase;
+}
+#reversePower,#minusThanZeroPower{
+    background: #C4C4C4;
+    border: none;
+    color: white;
 }
