@@ -88,6 +88,9 @@ header {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+        width: 329px;
+height: 405px;
+margin: 0 auto;
 }
 
 .operations {
