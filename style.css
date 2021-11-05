@@ -448,6 +448,10 @@ right: 0;
         order: 3;
         margin-right: 30px;
     }
+#powerSection{
+    background-color: white;
+    z-index: 200;
+}
 }
 #safe-item{
     border: none;
