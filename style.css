@@ -229,9 +229,23 @@ text-align: center;
         height: 60px;
     }
 
-    .power-icon-section {
+   .power-icon-section {
         display: none;
+        width: 100%
     }
+    #powerNumberScreen{
+        height: 78px;
+        font-size: 60px;
+    }
+    .btn-number{
+        width: 99.21px;
+        height: 99.21px;
+        font-size: 40px;
+  
+    }
+.powerIcon{
+    width: 510px;
+}
 
     .screen-all {
         height: 132.5px;
