@@ -4,7 +4,17 @@ let firstValue;
 function plusFunction() {
     if (document.getElementById("screen").textContent !== '') {
         firstValue = document.getElementById("screen").textContent;
+
+    }
+    if (((document.getElementById("screenTwo").textContent).includes("+") == false&& (document.getElementById("screenTwo").textContent).includes("-") == false && (document.getElementById("screenTwo").textContent).includes("*") == false && (document.getElementById("screenTwo").textContent).includes("/") == false) && (b == 0 || firstValue !== undefined)) {
         document.getElementById("screenTwo").textContent += "+"
+        console.log("mda")
+    } else if (((document.getElementById("screenTwo").textContent).includes("/") == true || (document.getElementById("screenTwo").textContent).includes("-") || true && (document.getElementById("screenTwo").textContent).includes("*") == true || (document.getElementById("screenTwo").textContent).includes("/") == true) && b !==0) {
+        document.getElementById("screenTwo").textContent = (document.getElementById("screenTwo").textContent).substring(0, (document.getElementById("screenTwo").textContent).length - 1);
+        console.log(document.getElementById("screenTwo").textContent)
+        document.getElementById("screenTwo").textContent += "+"
+    } else {
+        document.getElementById("screenTwo").textContent = document.getElementById("screen").textContent+ "+";
     }
     document.getElementById("screen").textContent = "";
     b = -1;
@@ -14,7 +24,17 @@ document.getElementById("minus").addEventListener("click", minusFunction);
 function minusFunction() {
     if (document.getElementById("screen").textContent !== '') {
         firstValue = document.getElementById("screen").textContent;
+
+    }
+    if (((document.getElementById("screenTwo").textContent).includes("+") == false&& (document.getElementById("screenTwo").textContent).includes("-") == false && (document.getElementById("screenTwo").textContent).includes("*") == false && (document.getElementById("screenTwo").textContent).includes("/") == false) && (b == 0 || firstValue !== undefined)) {
         document.getElementById("screenTwo").textContent += "-"
+        console.log("mda")
+    } else if (((document.getElementById("screenTwo").textContent).includes("/") == true || (document.getElementById("screenTwo").textContent).includes("-") || true && (document.getElementById("screenTwo").textContent).includes("*") == true || (document.getElementById("screenTwo").textContent).includes("/") == true) && b !==0) {
+        document.getElementById("screenTwo").textContent = (document.getElementById("screenTwo").textContent).substring(0, (document.getElementById("screenTwo").textContent).length - 1);
+        console.log(document.getElementById("screenTwo").textContent)
+        document.getElementById("screenTwo").textContent += "-"
+    } else {
+        document.getElementById("screenTwo").textContent = document.getElementById("screen").textContent+ "-";
     }
     document.getElementById("screen").textContent = "";
     b = 1;
@@ -24,7 +44,17 @@ document.getElementById("multiplication").addEventListener("click", multiplicati
 function multiplicationFunction() {
     if (document.getElementById("screen").textContent !== '') {
         firstValue = document.getElementById("screen").textContent;
+
+    }
+    if (((document.getElementById("screenTwo").textContent).includes("+") == false&& (document.getElementById("screenTwo").textContent).includes("-") == false && (document.getElementById("screenTwo").textContent).includes("*") == false && (document.getElementById("screenTwo").textContent).includes("/") == false) && (b == 0 || firstValue !== undefined)) {
         document.getElementById("screenTwo").textContent += "*"
+        console.log("mda")
+    } else if (((document.getElementById("screenTwo").textContent).includes("/") == true || (document.getElementById("screenTwo").textContent).includes("-") || true && (document.getElementById("screenTwo").textContent).includes("*") == true || (document.getElementById("screenTwo").textContent).includes("/") == true) && b !==0) {
+        document.getElementById("screenTwo").textContent = (document.getElementById("screenTwo").textContent).substring(0, (document.getElementById("screenTwo").textContent).length - 1);
+        console.log(document.getElementById("screenTwo").textContent)
+        document.getElementById("screenTwo").textContent += "*"
+    } else {
+        document.getElementById("screenTwo").textContent = document.getElementById("screen").textContent+ "*";
     }
     document.getElementById("screen").textContent = "";
     b = 2;
@@ -34,7 +64,17 @@ document.getElementById("division").addEventListener("click", divisionFunction);
 function divisionFunction() {
     if (document.getElementById("screen").textContent !== '') {
         firstValue = document.getElementById("screen").textContent;
+
+    }
+    if (((document.getElementById("screenTwo").textContent).includes("+") == false&& (document.getElementById("screenTwo").textContent).includes("-") == false && (document.getElementById("screenTwo").textContent).includes("*") == false && (document.getElementById("screenTwo").textContent).includes("/") == false) && (b == 0 || firstValue !== undefined)) {
         document.getElementById("screenTwo").textContent += "/"
+        console.log("mda")
+    } else if (((document.getElementById("screenTwo").textContent).includes("/") == true || (document.getElementById("screenTwo").textContent).includes("-") || true && (document.getElementById("screenTwo").textContent).includes("*") == true || (document.getElementById("screenTwo").textContent).includes("/") == true) && b !==0) {
+        document.getElementById("screenTwo").textContent = (document.getElementById("screenTwo").textContent).substring(0, (document.getElementById("screenTwo").textContent).length - 1);
+        console.log(document.getElementById("screenTwo").textContent)
+        document.getElementById("screenTwo").textContent += "/"
+    } else {
+        document.getElementById("screenTwo").textContent = document.getElementById("screen").textContent+ "/";
     }
     document.getElementById("screen").textContent = "";
     b = -2;
@@ -42,8 +82,7 @@ function divisionFunction() {
 document.getElementById("reverse").addEventListener("click", reverseFunction);
 
 function reverseFunction() {
-    document.getElementById("screen").textContent = (document.getElementById("screen").textContent).substring(0,
-        (document.getElementById("screen").textContent).length - 1);
+    document.getElementById("screen").textContent = (document.getElementById("screen").textContent).substring(0, (document.getElementById("screen").textContent).length - 1);
 }
 document.getElementById("zero").addEventListener("click", zeroFunction);
 document.getElementById("fraction").addEventListener("click", fractionFunction);
@@ -52,7 +91,7 @@ function fractionFunction() {
     let v = document.getElementById("screen").textContent;
     console.log((document.getElementById("screen").textContent).includes("."))
     if (v.includes('.') == false && document.getElementById("screen").textContent !== '') {
-        if ((document.getElementById("screenTwo").textContent).includes("+") == false  && (document.getElementById("screenTwo").textContent).includes("*") == false && (document.getElementById("screenTwo").textContent).includes("/") == false && b == 0 || firstValue !== undefined) {
+        if ((document.getElementById("screenTwo").textContent).includes("+") == false && (document.getElementById("screenTwo").textContent).includes("*") == false && (document.getElementById("screenTwo").textContent).includes("/") == false && b == 0 || firstValue !== undefined) {
             document.getElementById("screenTwo").textContent += "."
         } else {
             document.getElementById("screenTwo").textContent = document.getElementById("screen").textContent;
@@ -251,7 +290,7 @@ function equalsFunction() {
         console.log(parseInt(firstValue));
         console.log(secondValue)
         document.getElementById("screen").textContent = parseFloat(firstValue) - parseFloat(secondValue);
-        
+
         firstValue = undefined;
         b = 0;
     } else if (b === 2) {
@@ -370,3 +409,15 @@ document.getElementById("reverse").addEventListener('contextmenu', reverseLong)
 function reverseLong() {
     window.location.reload()
 }
+let pageWidth = document.documentElement.scrollWidth;
+
+function monitoring() {
+    pageWidth = document.documentElement.scrollWidth;
+    if (pageWidth < 1200) {
+        document.getElementById("safe").style.display = "none";
+    } else {
+        document.getElementById("safe").style.display = "block";
+    }
+    setTimeout(monitoring, 3000)
+}
+console.log(monitoring())
