@@ -177,6 +177,7 @@ margin: 0 auto;
     position: fixed;
     background: white;
     width: 100%;
+        border-bottom: 2px solid rgba(130, 130, 130, 1);
         display: none;
 }
 
