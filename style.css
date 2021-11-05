@@ -325,7 +325,7 @@ footer {
     .functions-list {
         width: 1005.21px;
         height: 333.76px;
-        margin: 0;
+        margin-right:0;
 flex-direction: row;
 position: relative;
 right: 0;
