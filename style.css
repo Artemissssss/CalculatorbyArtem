@@ -24,6 +24,9 @@ ul {
 }
 
 /* !=====================================header================ */
+#safe-iten,.functions-item:nth-of-type(1){
+    display: none;
+}
 header {
     border-bottom: 2px solid transparent;
     border-image: linear-gradient(90deg, rgba(237, 33, 58, 1), rgba(147, 41, 30, 1));
@@ -345,6 +348,7 @@ margin-right:0;
     .functions-item:nth-of-type(1) {
         order: -6;
         margin-right: 20px;
+        display: inline-block;
     }
 
     #safe {
