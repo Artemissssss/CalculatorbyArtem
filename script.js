@@ -1,5 +1,16 @@
 let b = 0;
 let firstValue;
+let story = [];
+
+function storySave(first, second) {
+    if (story.length == 20) {
+        story.pop()
+    }
+    story.unshift({
+        firstValu: first,
+        secondValu: second,
+    });
+}
 
 function plusFunction() {
     if (document.getElementById("screen").textContent !== '') {
@@ -299,6 +310,7 @@ function equalsFunction() {
         console.log(parseInt(firstValue));
         console.log(secondValue)
         document.getElementById("screen").textContent = parseFloat(firstValue) - parseFloat(secondValue);
+        storySave(document.getElementById("screen").textContent, document.getElementById("screenTwo").textContent)
 
         firstValue = undefined;
         b = 0;
@@ -308,6 +320,8 @@ function equalsFunction() {
         console.log(secondValue)
 
         document.getElementById("screen").textContent = parseFloat(firstValue) * parseFloat(secondValue);
+        storySave(document.getElementById("screen").textContent, document.getElementById("screenTwo").textContent)
+
         firstValue = undefined;
         b = 0;
     } else if (b === -2) {
@@ -316,6 +330,8 @@ function equalsFunction() {
         console.log(secondValue)
 
         document.getElementById("screen").textContent = parseFloat(firstValue) / parseFloat(secondValue);
+        storySave(document.getElementById("screen").textContent, document.getElementById("screenTwo").textContent)
+
         firstValue = undefined;
         b = 0;
     } else if (b === -1) {
@@ -324,6 +340,8 @@ function equalsFunction() {
         console.log(secondValue)
 
         document.getElementById("screen").textContent = parseFloat(firstValue) + parseFloat(secondValue);
+        storySave(document.getElementById("screen").textContent, document.getElementById("screenTwo").textContent)
+
         firstValue = undefined;
         b = 0;
     }
@@ -412,6 +430,7 @@ function themeChanger() {
     document.getElementById("theme").classList.toggle("change-icon");
     document.getElementById("powerSection").classList.toggle("theme-change")
     document.getElementsByClassName("operations")[0].classList.toggle("color-change");
+    document.getElementById("story").classList.toggle("story-theme")
 }
 document.getElementById("reverse").addEventListener('contextmenu', reverseLong)
 
@@ -429,4 +448,37 @@ function monitoring() {
     }
     setTimeout(monitoring, 3000)
 }
-console.log(monitoring())
+document.getElementById("story").addEventListener("click", storyFunction)
+var my_div = newP = null;
+
+function addElement() {
+    for (let mn = 0; mn <= story.length; mn++) {
+        let newScreenP = document.createElement("div");
+        newScreenP.className = 'story-screen-two'
+        let fg = story[mn];
+        newScreenP.textContent = fg.secondValu;
+        document.body.insertBefore(newScreenP, my_div);
+        let newP = document.createElement("div");
+        newP.className = 'story-screen'
+        let fr = story[mn];
+        newP.textContent = fr.firstValu;
+        document.body.insertBefore(newP, my_div);
+    }
+}
+let deleteStory = 0;
+
+function storyFunction() {
+    storySave(document.getElementById("screen").textContent, document.getElementById("screenTwo").textContent)
+    document.getElementById("functions").classList.toggle("story-delete")
+    document.getElementsByClassName('screen-all')[0].classList.toggle('story-delete')
+    if (deleteStory == 1) {
+        for (let kj = 0; kj < (document.getElementsByClassName('story-screen')).length; kj++) {
+            document.getElementsByClassName('story-screen')[kj].remove()
+            document.getElementsByClassName('story-screen-two')[kj].remove()
+        }
+        deleteStory = 0;
+    } else {
+        deleteStory = 1;
+        addElement()
+    }
+}
