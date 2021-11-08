@@ -1,7 +1,7 @@
 let b = 0;
 let firstValue;
 let story = [];
-
+document.cookie = story;
 function storySave(first, second) {
     if (story.length == 20) {
         story.pop()
