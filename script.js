@@ -452,7 +452,21 @@ document.getElementById("story").addEventListener("click", storyFunction)
 var my_div = newP = null;
 
 function addElement() {
+   if(document.cookie !== []){
     for (let mn = 0; mn <= story.length; mn++) {
+        let newScreenP = document.createElement("div");
+        newScreenP.className = 'story-screen-two'
+        let fg = document.cookie[mn];
+        newScreenP.textContent = fg.secondValu;
+        document.body.insertBefore(newScreenP, my_div);
+        let newP = document.createElement("div");
+        newP.className = 'story-screen'
+        let fr = document.cookie[mn];
+        newP.textContent = fr.firstValu;
+        document.body.insertBefore(newP, my_div);
+    }
+   }else{
+       for (let mn = 0; mn <= story.length; mn++) {
         let newScreenP = document.createElement("div");
         newScreenP.className = 'story-screen-two'
         let fg = story[mn];
@@ -464,6 +478,7 @@ function addElement() {
         newP.textContent = fr.firstValu;
         document.body.insertBefore(newP, my_div);
     }
+   }
 }
 let deleteStory = 0;
 
