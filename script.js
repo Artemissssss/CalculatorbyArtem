@@ -1,7 +1,7 @@
 let b = 0;
 let firstValue;
 let story = [];
-document.cookie = story;
+
 function storySave(first, second) {
     if (story.length == 20) {
         story.pop()
@@ -345,7 +345,7 @@ function equalsFunction() {
         firstValue = undefined;
         b = 0;
     }
-
+document.cookie = story.concat(document.cookie);
 }
 document.getElementById("zeroPower").addEventListener("click", zeroFunctionPower);
 
@@ -453,7 +453,7 @@ var my_div = newP = null;
 
 function addElement() {
    if(document.cookie !== []){
-    for (let mn = 0; mn <= story.length; mn++) {
+    for (let mn = 0; mn <= document.cookie.length; mn++) {
         let newScreenP = document.createElement("div");
         newScreenP.className = 'story-screen-two'
         let fg = document.cookie[mn];
@@ -462,19 +462,6 @@ function addElement() {
         let newP = document.createElement("div");
         newP.className = 'story-screen'
         let fr = document.cookie[mn];
-        newP.textContent = fr.firstValu;
-        document.body.insertBefore(newP, my_div);
-    }
-   }else{
-       for (let mn = 0; mn <= story.length; mn++) {
-        let newScreenP = document.createElement("div");
-        newScreenP.className = 'story-screen-two'
-        let fg = story[mn];
-        newScreenP.textContent = fg.secondValu;
-        document.body.insertBefore(newScreenP, my_div);
-        let newP = document.createElement("div");
-        newP.className = 'story-screen'
-        let fr = story[mn];
         newP.textContent = fr.firstValu;
         document.body.insertBefore(newP, my_div);
     }
