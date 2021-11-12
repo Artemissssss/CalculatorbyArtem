@@ -475,8 +475,8 @@ function storyFunction() {
     document.getElementsByClassName('screen-all')[0].classList.toggle('story-delete')
     if (deleteStory == 1) {
         for (let kj = 0; kj < (document.getElementsByClassName('story-screen')).length; kj++) {
-            document.getElementsByClassName('story-screen')[kj].remove()
-            document.getElementsByClassName('story-screen-two')[kj].remove()
+            document.getElementsByClassName('story-screen')[0].remove()
+            document.getElementsByClassName('story-screen-two')[0].remove()
         }
         deleteStory = 0;
     } else {
