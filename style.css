@@ -11,7 +11,8 @@
 }
 
 body {
-  min-height: 100vh;
+    min-height: 100vh;
+    max-height: 200vh;
 }
 
 button {
@@ -24,9 +25,11 @@ ul {
 }
 
 /* !=====================================header================ */
-#safe-iten,.functions-item:nth-of-type(1){
+#safe-iten,
+.functions-item:nth-of-type(1) {
     display: none;
 }
+
 header {
     border-bottom: 2px solid transparent;
     border-image: linear-gradient(90deg, rgba(237, 33, 58, 1), rgba(147, 41, 30, 1));
@@ -84,6 +87,7 @@ header {
 .functions {
     border-top: 2px solid rgba(130, 130, 130, 1);
     padding: 9px 0;
+    margin-bottom: 20px;
 }
 
 .m {
@@ -190,20 +194,17 @@ header {
 
 /* =====================================footer=========================== */
 footer {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
     height: 33px;
-    display: inline-block;
+    bottom: 0;
     width: 100%;
+
 }
 
 .copyright {
     text-decoration: none;
     font-size: 20px;
-    color: black;
     font-family: "Roboto", sans-serif;
+    color: inherit;
 }
 
 .copyright2 {
@@ -331,13 +332,13 @@ footer {
     .functions-list {
         width: 1005.21px;
         height: 333.76px;
-margin-right:0;
+        margin-right: 0;
         flex-direction: row;
         right: 0;
     }
 
     .functions-item {
-        
+
         margin-right: 20px;
     }
 
@@ -508,18 +509,21 @@ margin-right:0;
     border: none;
     color: white;
 }
-.story{
+
+.story {
     background-image: url(./open-book.png);
 }
-.story-theme{
+
+.story-theme {
     background-image: url(./open-book\ \(1\).png);
 }
-.story-delete{
-display: none;
+
+.story-delete {
+    display: none;
 }
 
 
-.story-screen-two{
+.story-screen-two {
     height: 52.5px;
     font-size: 48px;
     font-style: normal;
@@ -528,11 +532,12 @@ display: none;
     color: #646464;
     margin-top: 10px;
     width: 100%;
-    font-family: "Roboto",sans-serif;
+    font-family: "Roboto", sans-serif;
     text-align: right;
     padding-right: 4%;
 }
-.story-screen{
+
+.story-screen {
     height: 70px;
     font-size: 72px;
     font-style: normal;
@@ -540,10 +545,37 @@ display: none;
     line-height: 56px;
     margin-top: 5px;
     width: 100%;
-    font-family: "Roboto",sans-serif;
+    font-family: "Roboto", sans-serif;
     text-align: right;
     padding-right: 4%;
 }
-.story-p{
-    display: inline-block;
+
+.history {
+    display: none;
+}
+
+.history-item {
+    font-family: "Roboto", sans-serif;
+    color: black;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: normal;
+    margin-top: 25px;
+    padding-right: 5%;
+}
+
+.second-history {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 35px;
+    color: #646464;
+    margin-top: 10px;
+    height: 45px;
+    text-align: right;
+}
+
+.history-res {
+    text-align: right;
+    font-size: 45px;
 }

@@ -1,16 +1,32 @@
+function cookieAll() {
+    let allCookie = document.cookie;
+    allCookie = allCookie.split(";").reverse();
+    return allCookie;
+}
 let b = 0;
 let firstValue;
 let story = [];
-
-function storySave(first, second) {
-    if (story.length == 20) {
-        story.pop()
+for(let i = 0; i< cookieAll().length;i++){
+    if(cookieAll()[i].includes("theme")){
+        if(cookieAll()[i].includes("black")){
+            document.querySelector("body").classList.toggle("theme-change");
+            document.getElementsByClassName("name")[0].classList.toggle("color-change")
+            document.getElementsByClassName("btn-number")[0].classList.toggle("border-change")
+            document.getElementById("theme").classList.toggle("change-icon");
+            document.getElementById("powerSection").classList.toggle("theme-change")
+            document.getElementsByClassName("operations")[0].classList.toggle("color-change");
+            document.getElementById("story").classList.toggle("story-theme")
+            for (let i = 0; i < 20; i++) {
+                document.getElementsByClassName("history-res")[i].classList.toggle("color-change")
+            }
+            break;
+        }
     }
-    story.unshift({
-        firstValu: first,
-        secondValu: second,
-    });
 }
+if (search() == undefined) {
+    document.cookie = "numer=0"
+}
+
 
 function plusFunction() {
     if (document.getElementById("screen").textContent !== '') {
@@ -19,10 +35,10 @@ function plusFunction() {
     }
     if (((document.getElementById("screenTwo").textContent).includes("+") == false && (document.getElementById("screenTwo").textContent).includes("-") == false && (document.getElementById("screenTwo").textContent).includes("*") == false && (document.getElementById("screenTwo").textContent).includes("/") == false) && (b == 0 || firstValue !== undefined)) {
         document.getElementById("screenTwo").textContent += "+"
-        console.log("mda")
+
     } else if (((document.getElementById("screenTwo").textContent).includes("/") == true || (document.getElementById("screenTwo").textContent).includes("-") || true && (document.getElementById("screenTwo").textContent).includes("*") == true || (document.getElementById("screenTwo").textContent).includes("/") == true) && b !== 0) {
         document.getElementById("screenTwo").textContent = (document.getElementById("screenTwo").textContent).substring(0, (document.getElementById("screenTwo").textContent).length - 1);
-        console.log(document.getElementById("screenTwo").textContent)
+
         document.getElementById("screenTwo").textContent += "+"
     } else {
         document.getElementById("screenTwo").textContent = document.getElementById("screen").textContent + "+";
@@ -39,10 +55,10 @@ function minusFunction() {
     }
     if (((document.getElementById("screenTwo").textContent).includes("+") == false && (document.getElementById("screenTwo").textContent).includes("-") == false && (document.getElementById("screenTwo").textContent).includes("*") == false && (document.getElementById("screenTwo").textContent).includes("/") == false) && (b == 0 || firstValue !== undefined)) {
         document.getElementById("screenTwo").textContent += "-"
-        console.log("mda")
+
     } else if (((document.getElementById("screenTwo").textContent).includes("/") == true || (document.getElementById("screenTwo").textContent).includes("-") || true && (document.getElementById("screenTwo").textContent).includes("*") == true || (document.getElementById("screenTwo").textContent).includes("/") == true) && b !== 0) {
         document.getElementById("screenTwo").textContent = (document.getElementById("screenTwo").textContent).substring(0, (document.getElementById("screenTwo").textContent).length - 1);
-        console.log(document.getElementById("screenTwo").textContent)
+
         document.getElementById("screenTwo").textContent += "-"
     } else {
         document.getElementById("screenTwo").textContent = document.getElementById("screen").textContent + "-";
@@ -59,10 +75,10 @@ function multiplicationFunction() {
     }
     if (((document.getElementById("screenTwo").textContent).includes("+") == false && (document.getElementById("screenTwo").textContent).includes("-") == false && (document.getElementById("screenTwo").textContent).includes("*") == false && (document.getElementById("screenTwo").textContent).includes("/") == false) && (b == 0 || firstValue !== undefined)) {
         document.getElementById("screenTwo").textContent += "*"
-        console.log("mda")
+
     } else if (((document.getElementById("screenTwo").textContent).includes("/") == true || (document.getElementById("screenTwo").textContent).includes("-") || true && (document.getElementById("screenTwo").textContent).includes("*") == true || (document.getElementById("screenTwo").textContent).includes("/") == true) && b !== 0) {
         document.getElementById("screenTwo").textContent = (document.getElementById("screenTwo").textContent).substring(0, (document.getElementById("screenTwo").textContent).length - 1);
-        console.log(document.getElementById("screenTwo").textContent)
+
         document.getElementById("screenTwo").textContent += "*"
     } else {
         document.getElementById("screenTwo").textContent = document.getElementById("screen").textContent + "*";
@@ -79,10 +95,10 @@ function divisionFunction() {
     }
     if (((document.getElementById("screenTwo").textContent).includes("+") == false && (document.getElementById("screenTwo").textContent).includes("-") == false && (document.getElementById("screenTwo").textContent).includes("*") == false && (document.getElementById("screenTwo").textContent).includes("/") == false) && (b == 0 || firstValue !== undefined)) {
         document.getElementById("screenTwo").textContent += "/"
-        console.log("mda")
+
     } else if (((document.getElementById("screenTwo").textContent).includes("/") == true || (document.getElementById("screenTwo").textContent).includes("-") || true && (document.getElementById("screenTwo").textContent).includes("*") == true || (document.getElementById("screenTwo").textContent).includes("/") == true) && b !== 0) {
         document.getElementById("screenTwo").textContent = (document.getElementById("screenTwo").textContent).substring(0, (document.getElementById("screenTwo").textContent).length - 1);
-        console.log(document.getElementById("screenTwo").textContent)
+
         document.getElementById("screenTwo").textContent += "/"
     } else {
         document.getElementById("screenTwo").textContent = document.getElementById("screen").textContent + "/";
@@ -108,7 +124,7 @@ document.getElementById("fraction").addEventListener("click", fractionFunction);
 
 function fractionFunction() {
     let v = document.getElementById("screen").textContent;
-    console.log((document.getElementById("screen").textContent).includes("."))
+
     if (v.includes('.') == false && document.getElementById("screen").textContent !== '') {
         if ((document.getElementById("screenTwo").textContent).includes("+") == false && (document.getElementById("screenTwo").textContent).includes("*") == false && (document.getElementById("screenTwo").textContent).includes("/") == false && b == 0 || firstValue !== undefined) {
             document.getElementById("screenTwo").textContent += "."
@@ -153,7 +169,7 @@ document.getElementById("ok").addEventListener("click", powerFunction)
 
 function powerFunction() {
     let powerNumberToAll = parseFloat(document.getElementById("screen").textContent);
-    console.log(powerNumberToAll)
+
     if (document.getElementById("screen").textContent !== '') {
         if (dr == 0) {
             document.getElementsByClassName("power-icon-section")[0].style.display = "block";
@@ -170,7 +186,7 @@ function powerFunction() {
                     powerUp *= powerNumberToAll;
 
                 }
-                console.log(powerUp)
+
                 document.getElementById("screen").textContent = powerUp;
                 if ((document.getElementById("screenTwo").textContent).includes("+") == false && (document.getElementById("screenTwo").textContent).includes("-") == false && (document.getElementById("screenTwo").textContent).includes("*") == false && (document.getElementById("screenTwo").textContent).includes("/") == false && b == 0 || firstValue !== undefined) {
                     document.getElementById("screenTwo").textContent += `^${powerNumber}`
@@ -306,48 +322,53 @@ function nineFunction() {
 function equalsFunction() {
     let secondValue = document.getElementById("screen").textContent;
     if (b === 1) {
-        console.log(firstValue);
-        console.log(parseInt(firstValue));
-        console.log(secondValue)
+
         document.getElementById("screen").textContent = parseFloat(firstValue) - parseFloat(secondValue);
-        storySave(document.getElementById("screen").textContent, document.getElementById("screenTwo").textContent)
+
 
         firstValue = undefined;
         b = 0;
     } else if (b === 2) {
-        console.log(firstValue);
-        console.log(parseInt(firstValue));
-        console.log(secondValue)
+
 
         document.getElementById("screen").textContent = parseFloat(firstValue) * parseFloat(secondValue);
-        storySave(document.getElementById("screen").textContent, document.getElementById("screenTwo").textContent)
+
 
         firstValue = undefined;
         b = 0;
     } else if (b === -2) {
-        console.log(firstValue);
-        console.log(parseInt(firstValue));
-        console.log(secondValue)
+
 
         document.getElementById("screen").textContent = parseFloat(firstValue) / parseFloat(secondValue);
-        storySave(document.getElementById("screen").textContent, document.getElementById("screenTwo").textContent)
+
 
         firstValue = undefined;
         b = 0;
     } else if (b === -1) {
-        console.log(firstValue);
-        console.log(parseInt(firstValue));
-        console.log(secondValue)
+
 
         document.getElementById("screen").textContent = parseFloat(firstValue) + parseFloat(secondValue);
-        storySave(document.getElementById("screen").textContent, document.getElementById("screenTwo").textContent)
+
 
         firstValue = undefined;
         b = 0;
     }
-document.cookie = story.concat(document.cookie);
+    document.cookie = `result${parseInt(cookieAll()[search()].split("=")[1])}=${document.getElementById("screen").textContent}`
+    document.cookie = `second${parseInt(cookieAll()[search()].split("=")[1])}=${document.getElementById("screenTwo").textContent}`
+    document.cookie = `numer=${parseInt(cookieAll()[search()].split("=")[1])+1}`
 }
 document.getElementById("zeroPower").addEventListener("click", zeroFunctionPower);
+
+function search() {
+    let y;
+    for (let i = 0; i < cookieAll().length; i++) {
+        if (cookieAll()[i].includes("numer")) {
+            y = i
+            break;
+        }
+    }
+    return y;
+}
 
 function zeroFunctionPower() {
     document.getElementById("powerNumberScreen").textContent += "0";
@@ -422,15 +443,25 @@ function minusThanZeroFunctionPower() {
 }
 document.getElementById("theme").addEventListener("click", themeChanger);
 
+let l = 0;
 function themeChanger() {
     document.querySelector("body").classList.toggle("theme-change");
     document.getElementsByClassName("name")[0].classList.toggle("color-change")
-    document.getElementsByClassName("copyright")[0].classList.toggle("color-change")
     document.getElementsByClassName("btn-number")[0].classList.toggle("border-change")
     document.getElementById("theme").classList.toggle("change-icon");
     document.getElementById("powerSection").classList.toggle("theme-change")
     document.getElementsByClassName("operations")[0].classList.toggle("color-change");
     document.getElementById("story").classList.toggle("story-theme")
+    for (let i = 0; i < 20; i++) {
+        document.getElementsByClassName("history-res")[i].classList.toggle("color-change")
+    }
+    if (l == 0) {
+        document.cookie = `theme=black`
+        l++;
+    } else {
+        document.cookie = `theme=white`
+        l--;
+    }
 }
 document.getElementById("reverse").addEventListener('contextmenu', reverseLong)
 
@@ -448,39 +479,40 @@ function monitoring() {
     }
     setTimeout(monitoring, 3000)
 }
-document.getElementById("story").addEventListener("click", storyFunction)
-var my_div = newP = null;
 
-function addElement() {
-   if(document.cookie !== []){
-    for (let mn = 0; mn <= document.cookie.length; mn++) {
-        let newScreenP = document.createElement("div");
-        newScreenP.className = 'story-screen-two'
-        let fg = document.cookie[mn];
-        newScreenP.textContent = fg.secondValu;
-        document.body.insertBefore(newScreenP, my_div);
-        let newP = document.createElement("div");
-        newP.className = 'story-screen'
-        let fr = document.cookie[mn];
-        newP.textContent = fr.firstValu;
-        document.body.insertBefore(newP, my_div);
-    }
-   }
-}
-let deleteStory = 0;
+document.getElementById("story").addEventListener("click", storyFunction)
+let ja = 0;
 
 function storyFunction() {
-    storySave(document.getElementById("screen").textContent, document.getElementById("screenTwo").textContent)
-    document.getElementById("functions").classList.toggle("story-delete")
-    document.getElementsByClassName('screen-all')[0].classList.toggle('story-delete')
-    if (deleteStory == 1) {
-        for (let kj = 0; kj < (document.getElementsByClassName('story-screen')).length; kj++) {
-            document.getElementsByClassName('story-screen')[0].remove()
-            document.getElementsByClassName('story-screen-two')[0].remove()
-        }
-        deleteStory = 0;
+    if (ja == 0) {
+        document.getElementsByClassName("history")[0].style.display = "block"
+        ja++;
     } else {
-        deleteStory = 1;
-        addElement()
+        document.getElementsByClassName("history")[0].style.display = "none"
+        ja--;
+    }
+    document.getElementById("functions").classList.toggle("story-delete")
+    document.getElementsByClassName("screen-all")[0].classList.toggle("story-delete")
+    const second = document.getElementsByClassName("second-history")
+    const result = document.getElementsByClassName("history-res")
+    let p = 0;
+    for (let i = 0; i < 20; i++) {
+        second[i].style.display = "block";
+        result[i].style.display = "block";
+    }
+    for (let i = 0; i < cookieAll().length; i++) {
+        let r = i + 1;
+        if (cookieAll < r) {
+            break;
+        } else if ((cookieAll()[r]).split("=")[0].includes("result") && (cookieAll()[i]).split("=")[0].includes("second")) {
+            second[p].textContent = ((cookieAll()[i]).split("="))[1]
+            result[p].textContent = ((cookieAll()[r]).split("="))[1]
+            i++;
+            p++;
+        }
+    }
+    for (let i = p; i < 20; i++) {
+        second[i].style.display = "none";
+        result[i].style.display = "none";
     }
 }
